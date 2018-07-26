@@ -5,7 +5,7 @@ metadata:
     field.cattle.io/targetWorkloadIds: '["statefulset:default:tcpserver-stateful"]'
     workload.cattle.io/targetWorkloadIdNoop: "true"
     workload.cattle.io/workloadPortBased: "true"
-  creationTimestamp: 2018-07-26T02:20:19Z
+  creationTimestamp: 2018-07-26T09:55:43Z
   name: tcpserver-stateful-loadbalancer
   namespace: default
   ownerReferences:
@@ -13,16 +13,16 @@ metadata:
     controller: true
     kind: statefulset
     name: tcpserver-stateful
-    uid: 7171b9e3-907a-11e8-83c3-107b447cee8e
-  resourceVersion: "4129885"
+    uid: 0f3166aa-90ba-11e8-83c3-107b447cee8e
+  resourceVersion: "4181517"
   selfLink: /api/v1/namespaces/default/services/tcpserver-stateful-loadbalancer
-  uid: 718302a8-907a-11e8-83c3-107b447cee8e
+  uid: 0f62b6c1-90ba-11e8-83c3-107b447cee8e
 spec:
-  clusterIP: 10.43.61.84
+  clusterIP: 10.43.163.248
   externalTrafficPolicy: Cluster
   ports:
   - name: 20352tcp203533
-    nodePort: 32683
+    nodePort: 30563
     port: 20353
     protocol: TCP
     targetPort: 20352
