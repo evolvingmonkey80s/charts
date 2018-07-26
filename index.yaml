@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  tcpserver-stateful:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-07-26T15:18:15.293765258+08:00
+    description: A Helm chart for Kubernetes
+    digest: sha256:f356ff5226110559f6b6d6a0989297ca5834fe80476729e6910fcb24ac821ae6
+    name: tcpserver-stateful
+    urls:
+    - http://127.0.0.1:8879/charts/tcpserver-stateful-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-07-26T15:15:12.874865033+08:00
