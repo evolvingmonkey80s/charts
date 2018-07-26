@@ -3,10 +3,9 @@ categories:
   - CMS
 questions:
   - variable: tcp.port
-    default: "false"
+    default: 20352
     description: "tcp server listen port"
     type: int
     required: true
     label: tcp server listen port
-    show_subquestion_if: true
     group: "TCP Settings"
