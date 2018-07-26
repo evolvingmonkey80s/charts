@@ -1,0 +1,67 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  annotations:
+    field.cattle.io/creatorId: user-m4qkg
+  creationTimestamp: 2018-07-26T02:20:19Z
+  generation: 1
+  labels:
+    workload.user.cattle.io/workloadselector: statefulSet-default-tcpserver-stateful
+  name: tcpserver-stateful
+  namespace: default
+  resourceVersion: "4130443"
+  selfLink: /apis/apps/v1beta2/namespaces/default/statefulsets/tcpserver-stateful
+  uid: 7171b9e3-907a-11e8-83c3-107b447cee8e
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: statefulSet-default-tcpserver-stateful
+  serviceName: ""
+  template:
+    metadata:
+      annotations:
+        field.cattle.io/ports: '[[{"containerPort":20352,"dnsName":"tcpserver-stateful-loadbalancer","kind":"LoadBalancer","name":"20352tcp203533","protocol":"TCP","sourcePort":20353}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: statefulSet-default-tcpserver-stateful
+    spec:
+      affinity: {}
+      automountServiceAccountToken: true
+      containers:
+      - image: 172.16.14.77:8089/test/tcpserver:0.1.0
+        imagePullPolicy: Always
+        name: tcpserver-stateful
+        ports:
+        - containerPort: 20352
+          name: 20352tcp203533
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: private
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    type: RollingUpdate
+status:
+  collisionCount: 0
+  currentReplicas: 3
+  currentRevision: tcpserver-stateful-6f857c64c8
+  observedGeneration: 1
+  readyReplicas: 3
+  replicas: 3
+  updateRevision: tcpserver-stateful-6f857c64c8
